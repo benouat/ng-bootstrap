@@ -11,6 +11,7 @@ import {DEMO_DIRECTIVES} from './demos';
 @NgModule({
   imports: [NgbdSharedModule, NgbdComponentsSharedModule],
   exports: [NgbdDropdown],
-  declarations: [NgbdDropdown, ...DEMO_DIRECTIVES]
+  declarations: [NgbdDropdown, ...DEMO_DIRECTIVES],
+  entryComponents: [NgbdDropdown]
 })
 export class NgbdDropdownModule {}

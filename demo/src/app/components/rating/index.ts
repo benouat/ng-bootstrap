@@ -10,6 +10,7 @@ import {DEMO_DIRECTIVES} from './demos';
 @NgModule({
   imports: [NgbdSharedModule, NgbdComponentsSharedModule],
   exports: [NgbdRating],
-  declarations: [NgbdRating, ...DEMO_DIRECTIVES]
+  declarations: [NgbdRating, ...DEMO_DIRECTIVES],
+  entryComponents: [NgbdRating]
 })
 export class NgbdRatingModule {}

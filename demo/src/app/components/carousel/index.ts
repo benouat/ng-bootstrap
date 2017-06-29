@@ -11,6 +11,7 @@ import {DEMO_DIRECTIVES} from './demos';
 @NgModule({
   imports: [NgbdSharedModule, NgbdComponentsSharedModule],
   exports: [NgbdCarousel],
-  declarations: [NgbdCarousel, ...DEMO_DIRECTIVES]
+  declarations: [NgbdCarousel, ...DEMO_DIRECTIVES],
+  entryComponents: [NgbdCarousel]
 })
 export class NgbdCarouselModule {}

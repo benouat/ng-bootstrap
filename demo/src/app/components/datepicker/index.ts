@@ -10,5 +10,6 @@ import {DEMO_DIRECTIVES} from './demos';
   imports: [NgbdSharedModule, NgbdComponentsSharedModule],
   exports: [NgbdDatepicker],
   declarations: [NgbdDatepicker, ...DEMO_DIRECTIVES],
+  entryComponents: [NgbdDatepicker]
 })
 export class NgbdDatepickerModule {}

@@ -10,6 +10,7 @@ import {DEMO_DIRECTIVES} from './demos';
 @NgModule({
   imports: [NgbdSharedModule, NgbdComponentsSharedModule],
   exports: [NgbdPagination],
-  declarations: [NgbdPagination, ...DEMO_DIRECTIVES]
+  declarations: [NgbdPagination, ...DEMO_DIRECTIVES],
+  entryComponents: [NgbdPagination]
 })
 export class NgbdPaginationModule {}

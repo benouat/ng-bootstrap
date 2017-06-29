@@ -11,6 +11,7 @@ import {DEMO_DIRECTIVES} from './demos';
 @NgModule({
   imports: [NgbdSharedModule, NgbdComponentsSharedModule],
   exports: [NgbdTypeahead],
-  declarations: [NgbdTypeahead, ...DEMO_DIRECTIVES]
+  declarations: [NgbdTypeahead, ...DEMO_DIRECTIVES],
+  entryComponents: [NgbdTypeahead]
 })
 export class NgbdTypeaheadModule {}

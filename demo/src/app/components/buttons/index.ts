@@ -11,6 +11,7 @@ import {DEMO_DIRECTIVES} from './demos';
 @NgModule({
   imports: [NgbdSharedModule, NgbdComponentsSharedModule],
   exports: [NgbdButtons],
-  declarations: [NgbdButtons, ...DEMO_DIRECTIVES]
+  declarations: [NgbdButtons, ...DEMO_DIRECTIVES],
+  entryComponents: [NgbdButtons]
 })
 export class NgbdButtonsModule {}

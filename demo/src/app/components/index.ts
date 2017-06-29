@@ -54,7 +54,7 @@ import {NgbdTypeaheadModule} from './typeahead';
     NgbdTabsModule,
     NgbdTimepickerModule,
     NgbdTooltipModule,
-    NgbdTypeaheadModule
+    NgbdTypeaheadModule,
   ],
   exports: [
     NgbdAccordionModule,

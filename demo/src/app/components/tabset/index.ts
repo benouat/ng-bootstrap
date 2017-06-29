@@ -11,6 +11,7 @@ import {DEMO_DIRECTIVES} from './demos';
 @NgModule({
   imports: [NgbdSharedModule, NgbdComponentsSharedModule],
   exports: [NgbdTabs],
-  declarations: [NgbdTabs, ...DEMO_DIRECTIVES]
+  declarations: [NgbdTabs, ...DEMO_DIRECTIVES],
+  entryComponents: [NgbdTabs]
 })
 export class NgbdTabsModule {}

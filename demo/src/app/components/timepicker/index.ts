@@ -11,6 +11,7 @@ import {DEMO_DIRECTIVES} from './demos';
 @NgModule({
   imports: [NgbdSharedModule, NgbdComponentsSharedModule],
   exports: [NgbdTimepicker],
-  declarations: [NgbdTimepicker, ...DEMO_DIRECTIVES]
+  declarations: [NgbdTimepicker, ...DEMO_DIRECTIVES],
+  entryComponents: [NgbdTimepicker]
 })
 export class NgbdTimepickerModule {}

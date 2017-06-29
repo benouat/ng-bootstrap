@@ -11,6 +11,7 @@ import {DEMO_DIRECTIVES} from './demos';
 @NgModule({
   imports: [NgbdSharedModule, NgbdComponentsSharedModule],
   exports: [NgbdCollapse],
-  declarations: [NgbdCollapse, ...DEMO_DIRECTIVES]
+  declarations: [NgbdCollapse, ...DEMO_DIRECTIVES],
+  entryComponents: [NgbdCollapse]
 })
 export class NgbdCollapseModule {}

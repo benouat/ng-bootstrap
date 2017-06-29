@@ -11,6 +11,7 @@ import {DEMO_DIRECTIVES} from './demos';
 @NgModule({
   imports: [NgbdSharedModule, NgbdComponentsSharedModule],
   exports: [NgbdAlert],
-  declarations: [NgbdAlert, ...DEMO_DIRECTIVES]
+  declarations: [NgbdAlert, ...DEMO_DIRECTIVES],
+  entryComponents: [NgbdAlert]
 })
 export class NgbdAlertModule {}

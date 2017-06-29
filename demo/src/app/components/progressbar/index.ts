@@ -11,6 +11,7 @@ import {DEMO_DIRECTIVES} from './demos';
 @NgModule({
   imports: [NgbdSharedModule, NgbdComponentsSharedModule],
   exports: [NgbdProgressbar],
-  declarations: [NgbdProgressbar, ...DEMO_DIRECTIVES]
+  declarations: [NgbdProgressbar, ...DEMO_DIRECTIVES],
+  entryComponents: [NgbdProgressbar]
 })
 export class NgbdProgressbarModule {}

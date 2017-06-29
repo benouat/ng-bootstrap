@@ -9,7 +9,7 @@ import {DEMO_DIRECTIVES, NgbdModalContent} from './demos';
 @NgModule({
   imports: [NgbdSharedModule, NgbdComponentsSharedModule],
   exports: [NgbdModal],
-  entryComponents: [NgbdModalContent],
+  entryComponents: [NgbdModal, NgbdModalContent],
   declarations: [NgbdModal, NgbdModalContent, ...DEMO_DIRECTIVES]
 })
 export class NgbdModalModule {}

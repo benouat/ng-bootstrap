@@ -11,6 +11,7 @@ import {DEMO_DIRECTIVES} from './demos';
 @NgModule({
   imports: [NgbdSharedModule, NgbdComponentsSharedModule],
   exports: [NgbdPopover],
-  declarations: [NgbdPopover, ...DEMO_DIRECTIVES]
+  declarations: [NgbdPopover, ...DEMO_DIRECTIVES],
+  entryComponents: [NgbdPopover]
 })
 export class NgbdPopoverModule {}
