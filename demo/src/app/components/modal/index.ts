@@ -1,15 +1,18 @@
-export * from './modal.component';
+import { NgModule } from '@angular/core';
 
-import {NgModule} from '@angular/core';
-import {NgbdModal} from './modal.component';
-import {NgbdSharedModule} from '../../shared';
-import {NgbdComponentsSharedModule} from '../shared';
-import {DEMO_DIRECTIVES, NgbdModalContent} from './demos';
+import { NgbdSharedModule } from '../../shared';
+import { NgbdComponentsSharedModule } from '../shared';
+import { NgbdModalApi } from './api.component';
+import { DEMO_DIRECTIVES, NgbdModalContent } from './demos';
+import { NgbdModalExamples } from './examples.component';
+
+export * from './api.component';
+export * from './examples.component';
 
 @NgModule({
   imports: [NgbdSharedModule, NgbdComponentsSharedModule],
-  exports: [NgbdModal],
+  exports: [NgbdModalApi, NgbdModalExamples],
   entryComponents: [NgbdModalContent],
-  declarations: [NgbdModal, NgbdModalContent, ...DEMO_DIRECTIVES]
+  declarations: [NgbdModalApi, NgbdModalExamples, NgbdModalContent, ...DEMO_DIRECTIVES]
 })
 export class NgbdModalModule {}

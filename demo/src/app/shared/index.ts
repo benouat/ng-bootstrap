@@ -1,20 +1,17 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {RouterModule} from '@angular/router';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-
-import {ComponentWrapper} from './component-wrapper/component-wrapper.component';
-import {PageWrapper} from './page-wrapper/page-wrapper.component';
-import {SideNavComponent} from './side-nav/side-nav.component';
-import {Analytics} from './analytics/analytics';
-
-import {NgbdCodeComponent} from './code/code.component';
-import {CodeHighlightService} from './code/code-highlight.service';
-
-export {componentsList} from './side-nav/side-nav.component';
+import { Analytics } from './analytics/analytics';
+import { CodeHighlightService } from './code/code-highlight.service';
+import { NgbdCodeComponent } from './code/code.component';
+import { ComponentWrapper } from './component-wrapper/component-wrapper.component';
+import { ContentNavigationComponent } from './content-nav/content-nav.component';
+import { PageWrapper } from './page-wrapper/page-wrapper.component';
+import { SideNavComponent } from './side-nav/side-nav.component';
 
 @NgModule({
   imports: [CommonModule, RouterModule, NgbModule],
@@ -34,7 +31,8 @@ export {componentsList} from './side-nav/side-nav.component';
     ComponentWrapper,
     PageWrapper,
     SideNavComponent,
-    NgbdCodeComponent
+    NgbdCodeComponent,
+    ContentNavigationComponent
   ],
   providers: [Analytics, CodeHighlightService]
 })

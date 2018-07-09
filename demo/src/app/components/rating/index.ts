@@ -1,15 +1,17 @@
-export * from './rating.component';
+import { NgModule } from '@angular/core';
 
-import {NgModule} from '@angular/core';
+import { NgbdSharedModule } from '../../shared';
+import { NgbdComponentsSharedModule } from '../shared';
+import { NgbdRatingApi } from './api.component';
+import { DEMO_DIRECTIVES } from './demos';
+import { NgbdRatingExamples } from './examples.component';
 
-import {NgbdSharedModule} from '../../shared';
-import {NgbdComponentsSharedModule} from '../shared';
-import {NgbdRating} from './rating.component';
-import {DEMO_DIRECTIVES} from './demos';
+export * from './api.component';
+export * from './examples.component';
 
 @NgModule({
   imports: [NgbdSharedModule, NgbdComponentsSharedModule],
-  exports: [NgbdRating],
-  declarations: [NgbdRating, ...DEMO_DIRECTIVES]
+  exports: [NgbdRatingApi, NgbdRatingExamples],
+  declarations: [NgbdRatingApi, NgbdRatingExamples, ...DEMO_DIRECTIVES]
 })
 export class NgbdRatingModule {}

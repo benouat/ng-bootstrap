@@ -1,16 +1,17 @@
-export * from './tooltip.component';
+import { NgModule } from '@angular/core';
 
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { NgbdSharedModule } from '../../shared';
+import { NgbdComponentsSharedModule } from '../shared';
+import { NgbdTooltipApi } from './api.component';
+import { DEMO_DIRECTIVES } from './demos';
+import { NgbdTooltipExamples } from './examples.component';
 
-import {NgbdSharedModule} from '../../shared';
-import {NgbdComponentsSharedModule} from '../shared';
-import {NgbdTooltip} from './tooltip.component';
-import {DEMO_DIRECTIVES} from './demos';
+export * from './api.component';
+export * from './examples.component';
 
 @NgModule({
   imports: [NgbdSharedModule, NgbdComponentsSharedModule],
-  exports: [NgbdTooltip],
-  declarations: [NgbdTooltip, ...DEMO_DIRECTIVES]
+  exports: [NgbdTooltipApi, NgbdTooltipExamples],
+  declarations: [NgbdTooltipApi, NgbdTooltipExamples, ...DEMO_DIRECTIVES]
 })
 export class NgbdTooltipModule {}

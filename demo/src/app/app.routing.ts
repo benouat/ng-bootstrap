@@ -1,135 +1,219 @@
-import {Routes, RouterModule} from '@angular/router';
-import {ModuleWithProviders} from '@angular/core';
-import {DefaultComponent} from './default';
-import {GettingStarted} from './getting-started';
+import { ModuleWithProviders } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
 import {
-  NgbdAccordion,
-  NgbdAlert,
-  NgbdButtons,
-  NgbdCarousel,
-  NgbdCollapse,
-  NgbdDatepicker,
-  NgbdDropdown,
-  NgbdModal,
-  NgbdPagination,
-  NgbdPopover,
-  NgbdProgressbar,
-  NgbdRating,
-  NgbdTabs,
-  NgbdTimepicker,
-  NgbdTooltip,
-  NgbdTypeahead
+  NgbdAccordionApi,
+  NgbdAccordionExamples,
+  NgbdAlertApi,
+  NgbdAlertExamples,
+  NgbdButtonsApi,
+  NgbdButtonsExamples,
+  NgbdCarouselApi,
+  NgbdCarouselExamples,
+  NgbdCollapseApi,
+  NgbdCollapseExamples,
+  NgbdDatepickerApi,
+  NgbdDatepickerExamples,
+  NgbdDatepickerOverview,
+  NgbdDropdownApi,
+  NgbdDropdownExamples,
+  NgbdModalApi,
+  NgbdModalExamples,
+  NgbdPaginationApi,
+  NgbdPaginationExamples,
+  NgbdPopoverApi,
+  NgbdPopoverExamples,
+  NgbdProgressbarApi,
+  NgbdProgressbarExamples,
+  NgbdRatingApi,
+  NgbdRatingExamples,
+  NgbdTabsApi,
+  NgbdTabsExamples,
+  NgbdTimepickerApi,
+  NgbdTimepickerExamples,
+  NgbdTooltipApi,
+  NgbdTooltipExamples,
+  NgbdTypeaheadApi,
+  NgbdTypeaheadExamples,
 } from './components';
+import { DefaultComponent } from './default';
+import { GettingStarted } from './getting-started';
+import { ComponentWrapper } from './shared/component-wrapper/component-wrapper.component';
 
-const DEFAULT_API_PATH = {path: '', pathMatch: 'full', redirectTo: 'examples'};
-const DEFAULT_API_PATH_OVERVIEW = {path: '', pathMatch: 'full', redirectTo: 'overview'};
+const DEFAULT_API_PATH = {
+  path: '',
+  pathMatch: 'full',
+  redirectTo: 'examples'
+};
 
-const componentRoutes = [{
-    path: 'components/accordion',
+const DEFAULT_API_PATH_OVERVIEW = {
+  path: '',
+  pathMatch: 'full',
+  redirectTo: 'overview'
+};
+
+const componentRoutes = [
+  {
+    path: 'accordion',
+    component: ComponentWrapper,
     children: [
       DEFAULT_API_PATH,
-      {path: ':tab', component: NgbdAccordion}
+      { path: 'examples', component: NgbdAccordionExamples },
+      { path: 'api', component: NgbdAccordionApi }
     ]
-  }, {
-    path: 'components/alert',
+  },
+  {
+    path: 'alert',
+    component: ComponentWrapper,
     children: [
       DEFAULT_API_PATH,
-      {path: ':tab', component: NgbdAlert}
+      { path: 'examples', component: NgbdAlertExamples },
+      { path: 'api', component: NgbdAlertApi }
     ]
-  }, {
-    path: 'components/buttons',
+  },
+  {
+    path: 'buttons',
+    component: ComponentWrapper,
     children: [
       DEFAULT_API_PATH,
-      {path: ':tab', component: NgbdButtons}
+      { path: 'examples', component: NgbdButtonsExamples },
+      { path: 'api', component: NgbdButtonsApi }
     ]
-  }, {
-    path: 'components/carousel',
+  },
+  {
+    path: 'carousel',
+    component: ComponentWrapper,
     children: [
       DEFAULT_API_PATH,
-      {path: ':tab', component: NgbdCarousel}
+      { path: 'examples', component: NgbdCarouselExamples },
+      { path: 'api', component: NgbdCarouselApi }
     ]
-  }, {
-    path: 'components/collapse',
+  },
+  {
+    path: 'collapse',
+    component: ComponentWrapper,
     children: [
       DEFAULT_API_PATH,
-      {path: ':tab', component: NgbdCollapse}
+      { path: 'examples', component: NgbdCollapseExamples },
+      { path: 'api', component: NgbdCollapseApi }
     ]
-  }, {
-    path: 'components/datepicker',
+  },
+  {
+    path: 'datepicker',
+    component: ComponentWrapper,
     children: [
       DEFAULT_API_PATH_OVERVIEW,
-      {path: ':tab', component: NgbdDatepicker}
+      { path: 'overview', component: NgbdDatepickerOverview },
+      { path: 'examples', component: NgbdDatepickerExamples },
+      { path: 'api', component: NgbdDatepickerApi }
     ]
-  }, {
-    path: 'components/dropdown',
+  },
+  {
+    path: 'dropdown',
+    component: ComponentWrapper,
     children: [
       DEFAULT_API_PATH,
-      {path: ':tab', component: NgbdDropdown}
+      { path: 'examples', component: NgbdDropdownExamples },
+      { path: 'api', component: NgbdDropdownApi }
     ]
-  }, {
-    path: 'components/modal',
+  },
+  {
+    path: 'modal',
+    component: ComponentWrapper,
     children: [
       DEFAULT_API_PATH,
-      {path: ':tab', component: NgbdModal}
+      { path: 'examples', component: NgbdModalExamples },
+      { path: 'api', component: NgbdModalApi }
     ]
-  }, {
-    path: 'components/pagination',
+  },
+  {
+    path: 'pagination',
+    component: ComponentWrapper,
     children: [
       DEFAULT_API_PATH,
-      {path: ':tab', component: NgbdPagination}
+      { path: 'examples', component: NgbdPaginationExamples },
+      { path: 'api', component: NgbdPaginationApi }
     ]
-  }, {
-    path: 'components/popover',
+  },
+  {
+    path: 'popover',
+    component: ComponentWrapper,
     children: [
       DEFAULT_API_PATH,
-      {path: ':tab', component: NgbdPopover}
+      { path: 'examples', component: NgbdPopoverExamples },
+      { path: 'api', component: NgbdPopoverApi }
     ]
-  }, {
-    path: 'components/progressbar',
+  },
+  {
+    path: 'progressbar',
+    component: ComponentWrapper,
     children: [
       DEFAULT_API_PATH,
-      {path: ':tab', component: NgbdProgressbar}
+      { path: 'examples', component: NgbdProgressbarExamples },
+      { path: 'api', component: NgbdProgressbarApi }
     ]
-  }, {
-    path: 'components/rating',
+  },
+  {
+    path: 'rating',
+    component: ComponentWrapper,
     children: [
       DEFAULT_API_PATH,
-      {path: ':tab', component: NgbdRating}
+      { path: 'examples', component: NgbdRatingExamples },
+      { path: 'api', component: NgbdRatingApi }
     ]
-  }, {
-    path: 'components/tabs',
+  },
+  {
+    path: 'tabs',
+    component: ComponentWrapper,
     children: [
       DEFAULT_API_PATH,
-      {path: ':tab', component: NgbdTabs}
+      { path: 'examples', component: NgbdTabsExamples },
+      { path: 'api', component: NgbdTabsApi }
     ]
-  }, {
-    path: 'components/timepicker',
+  },
+  {
+    path: 'timepicker',
+    component: ComponentWrapper,
     children: [
       DEFAULT_API_PATH,
-      {path: ':tab', component: NgbdTimepicker}
+      { path: 'examples', component: NgbdTimepickerExamples },
+      { path: 'api', component: NgbdTimepickerApi }
     ]
-  }, {
-    path: 'components/tooltip',
+  },
+  {
+    path: 'tooltip',
+    component: ComponentWrapper,
     children: [
       DEFAULT_API_PATH,
-      {path: ':tab', component: NgbdTooltip}
+      { path: 'examples', component: NgbdTooltipExamples },
+      { path: 'api', component: NgbdTooltipApi }
     ]
-  }, {
-    path: 'components/typeahead',
+  },
+  {
+    path: 'typeahead',
+    component: ComponentWrapper,
     children: [
       DEFAULT_API_PATH,
-      {path: ':tab', component: NgbdTypeahead}
+      { path: 'examples', component: NgbdTypeaheadExamples },
+      { path: 'api', component: NgbdTypeaheadApi }
     ]
   }
 ];
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: 'home'},
-  {path: 'home', component: DefaultComponent},
-  {path: 'getting-started', component: GettingStarted},
-  {path: 'components', pathMatch: 'full', redirectTo: 'components/accordion' },
-  ...componentRoutes,
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: 'home', component: DefaultComponent },
+  { path: 'getting-started', component: GettingStarted },
+  {
+    path: 'components',
+    children: [
+      { path: '', pathMatch: 'full', redirectTo: 'accordion' },
+      ...componentRoutes
+    ]
+  },
   { path: '**', redirectTo: 'home' }
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(routes, {useHash: true});
+export const routing: ModuleWithProviders = RouterModule.forRoot(routes, {
+  useHash: true
+});

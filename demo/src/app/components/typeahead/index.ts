@@ -1,16 +1,17 @@
-export * from './typeahead.component';
+import { NgModule } from '@angular/core';
 
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { NgbdSharedModule } from '../../shared';
+import { NgbdComponentsSharedModule } from '../shared';
+import { NgbdTypeaheadApi } from './api.component';
+import { DEMO_DIRECTIVES } from './demos';
+import { NgbdTypeaheadExamples } from './examples.component';
 
-import {NgbdSharedModule} from '../../shared';
-import {NgbdComponentsSharedModule} from '../shared';
-import {NgbdTypeahead} from './typeahead.component';
-import {DEMO_DIRECTIVES} from './demos';
+export * from './api.component';
+export * from './examples.component';
 
 @NgModule({
   imports: [NgbdSharedModule, NgbdComponentsSharedModule],
-  exports: [NgbdTypeahead],
-  declarations: [NgbdTypeahead, ...DEMO_DIRECTIVES]
+  exports: [NgbdTypeaheadApi, NgbdTypeaheadExamples],
+  declarations: [NgbdTypeaheadApi, NgbdTypeaheadExamples, ...DEMO_DIRECTIVES]
 })
 export class NgbdTypeaheadModule {}

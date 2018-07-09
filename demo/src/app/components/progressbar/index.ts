@@ -1,16 +1,17 @@
-export * from './progressbar.component';
+import { NgModule } from '@angular/core';
 
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { NgbdSharedModule } from '../../shared';
+import { NgbdComponentsSharedModule } from '../shared';
+import { NgbdProgressbarApi } from './api.component';
+import { DEMO_DIRECTIVES } from './demos';
+import { NgbdProgressbarExamples } from './examples.component';
 
-import {NgbdSharedModule} from '../../shared';
-import {NgbdComponentsSharedModule} from '../shared';
-import {NgbdProgressbar} from './progressbar.component';
-import {DEMO_DIRECTIVES} from './demos';
+export * from './api.component';
+export * from './examples.component';
 
 @NgModule({
   imports: [NgbdSharedModule, NgbdComponentsSharedModule],
-  exports: [NgbdProgressbar],
-  declarations: [NgbdProgressbar, ...DEMO_DIRECTIVES]
+  exports: [NgbdProgressbarApi, NgbdProgressbarExamples],
+  declarations: [NgbdProgressbarApi, NgbdProgressbarExamples, ...DEMO_DIRECTIVES]
 })
 export class NgbdProgressbarModule {}

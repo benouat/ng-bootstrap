@@ -1,16 +1,17 @@
-export * from './tabset.component';
+import { NgModule } from '@angular/core';
 
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { NgbdSharedModule } from '../../shared';
+import { NgbdComponentsSharedModule } from '../shared';
+import { NgbdTabsApi } from './api.component';
+import { DEMO_DIRECTIVES } from './demos';
+import { NgbdTabsExamples } from './examples.component';
 
-import {NgbdSharedModule} from '../../shared';
-import {NgbdComponentsSharedModule} from '../shared';
-import {NgbdTabs} from './tabset.component';
-import {DEMO_DIRECTIVES} from './demos';
+export * from './api.component';
+export * from './examples.component';
 
 @NgModule({
   imports: [NgbdSharedModule, NgbdComponentsSharedModule],
-  exports: [NgbdTabs],
-  declarations: [NgbdTabs, ...DEMO_DIRECTIVES]
+  exports: [NgbdTabsApi, NgbdTabsExamples],
+  declarations: [NgbdTabsApi, NgbdTabsExamples, ...DEMO_DIRECTIVES]
 })
 export class NgbdTabsModule {}

@@ -1,61 +1,57 @@
-import {Component, ContentChild, ContentChildren, Input, NgZone} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import { ChangeDetectorRef, Component, ElementRef, NgZone } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
-import {ExampleBoxComponent} from '../../components/shared/example-box';
-import {NgbdApiDocs, NgbdApiDocsClass, NgbdApiDocsConfig} from '../../components/shared/api-docs';
-import {NgbdOverviewComponent} from '../../components/shared/overview';
-
-const VALID_TABS = ['overview', 'examples', 'api'];
-
-@Component({selector: 'ngbd-component-wrapper', templateUrl: './component-wrapper.component.html'})
+@Component({
+  selector: 'ngbd-component-wrapper',
+  templateUrl: './component-wrapper.component.html',
+})
 export class ComponentWrapper {
-  @Input() component: string;
+  activeTab = 'examples';
 
-  activeTab: string;
+  component: string;
 
   fileTypes = [
     ['T', 'HTML template file', 'btn-secondary'],
-    ['C', 'Component typescript file', 'btn-info'],
+    ['C', 'Component typescript file', 'btn-info']
   ];
 
-  sidebarCollapsed = true;
-
-  @ContentChild(NgbdOverviewComponent) overview;
-
-  @ContentChildren(ExampleBoxComponent) demos;
-
-  @ContentChildren(NgbdApiDocs) apiDocs;
-
-  @ContentChildren(NgbdApiDocsClass) apiDocsClass;
-
-  @ContentChildren(NgbdApiDocsConfig) apiDocsConfig;
+  hasOverview = false;
 
   isSmallScreenOrLess: boolean;
   isLargeScreenOrLess: boolean;
+  isMobile: boolean;
 
-  constructor(private route: ActivatedRoute, private router: Router, ngZone: NgZone) {
-    this.route.params.subscribe(params => {
-      const tab = params['tab'];
-      if (VALID_TABS.indexOf(tab) !== -1) {
-        this.activeTab = tab;
-      } else {
-        this.router.navigate(['..'], {relativeTo: this.route});
-      }
-      document.body.scrollIntoView();
+  links: { href: string; title: string }[] = [];
+
+  sidebarCollapsed = true;
+
+  constructor(
+    route: ActivatedRoute,
+    router: Router,
+    ngZone: NgZone,
+    private _element: ElementRef,
+    private _changeDetector: ChangeDetectorRef
+  ) {
+    this.hasOverview = route.routeConfig.children.some(
+      r => r.path === 'overview'
+    );
+    route.url.subscribe(segments => {
+      this.component = segments[0].path;
+      this.activeTab = route.snapshot.firstChild.routeConfig.path;
     });
 
     // information extracted from https://getbootstrap.com/docs/4.1/layout/overview/
     // TODO: we should implements our own mediamatcher, according to bootstrap layout.
     const smallScreenQL = matchMedia('(max-width: 767.98px)');
-    smallScreenQL.addListener((event) => ngZone.run(() => this.isSmallScreenOrLess = event.matches));
+    smallScreenQL.addListener(event =>
+      ngZone.run(() => (this.isSmallScreenOrLess = event.matches))
+    );
     this.isSmallScreenOrLess = smallScreenQL.matches;
 
     const largeScreenQL = matchMedia('(max-width: 1199.98px)');
     this.isLargeScreenOrLess = largeScreenQL.matches;
-    largeScreenQL.addListener((event) => ngZone.run(() => this.isLargeScreenOrLess = event.matches));
-  }
-
-  tabChange(event) {
-    this.router.navigate(['..', event.nextId], {relativeTo: this.route});
+    largeScreenQL.addListener(event =>
+      ngZone.run(() => (this.isLargeScreenOrLess = event.matches))
+    );
   }
 }

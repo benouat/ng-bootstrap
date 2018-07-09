@@ -1,16 +1,17 @@
-export * from './popover.component';
+import { NgModule } from '@angular/core';
 
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { NgbdSharedModule } from '../../shared';
+import { NgbdComponentsSharedModule } from '../shared';
+import { NgbdPopoverApi } from './api.component';
+import { DEMO_DIRECTIVES } from './demos';
+import { NgbdPopoverExamples } from './examples.component';
 
-import {NgbdSharedModule} from '../../shared';
-import {NgbdComponentsSharedModule} from '../shared';
-import {NgbdPopover} from './popover.component';
-import {DEMO_DIRECTIVES} from './demos';
+export * from './examples.component';
+export * from './api.component';
 
 @NgModule({
   imports: [NgbdSharedModule, NgbdComponentsSharedModule],
-  exports: [NgbdPopover],
-  declarations: [NgbdPopover, ...DEMO_DIRECTIVES]
+  exports: [NgbdPopoverApi, NgbdPopoverExamples],
+  declarations: [NgbdPopoverApi, NgbdPopoverExamples, ...DEMO_DIRECTIVES]
 })
 export class NgbdPopoverModule {}

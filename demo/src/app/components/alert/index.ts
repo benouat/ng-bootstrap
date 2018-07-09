@@ -1,16 +1,18 @@
-export * from './alert.component';
+import { NgModule } from '@angular/core';
 
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { NgbdSharedModule } from '../../shared';
+import { NgbdComponentsSharedModule } from '../shared';
+import { NgbdAlertApi } from './api.component';
+import { DEMO_DIRECTIVES } from './demos';
+import { NgbdAlertExamples } from './examples.component';
 
-import {NgbdSharedModule} from '../../shared';
-import {NgbdComponentsSharedModule} from '../shared';
-import {NgbdAlert} from './alert.component';
-import {DEMO_DIRECTIVES} from './demos';
+export * from './examples.component';
+export * from './api.component';
+
 
 @NgModule({
   imports: [NgbdSharedModule, NgbdComponentsSharedModule],
-  exports: [NgbdAlert],
-  declarations: [NgbdAlert, ...DEMO_DIRECTIVES]
+  exports: [NgbdAlertExamples, NgbdAlertApi],
+  declarations: [NgbdAlertExamples, NgbdAlertApi, ...DEMO_DIRECTIVES]
 })
 export class NgbdAlertModule {}

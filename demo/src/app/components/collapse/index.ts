@@ -1,16 +1,17 @@
-export * from './collapse.component';
+import { NgModule } from '@angular/core';
 
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { NgbdSharedModule } from '../../shared';
+import { NgbdComponentsSharedModule } from '../shared';
+import { NgbdCollapseApi } from './api.component';
+import { DEMO_DIRECTIVES } from './demos';
+import { NgbdCollapseExamples } from './examples.component';
 
-import {NgbdSharedModule} from '../../shared';
-import {NgbdComponentsSharedModule} from '../shared';
-import {NgbdCollapse} from './collapse.component';
-import {DEMO_DIRECTIVES} from './demos';
+export * from './api.component';
+export * from './examples.component';
 
 @NgModule({
   imports: [NgbdSharedModule, NgbdComponentsSharedModule],
-  exports: [NgbdCollapse],
-  declarations: [NgbdCollapse, ...DEMO_DIRECTIVES]
+  exports: [NgbdCollapseExamples, NgbdCollapseApi],
+  declarations: [NgbdCollapseExamples, NgbdCollapseApi,  ...DEMO_DIRECTIVES]
 })
 export class NgbdCollapseModule {}

@@ -1,16 +1,18 @@
-export * from './dropdown.component';
+import { NgModule } from '@angular/core';
 
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { NgbdSharedModule } from '../../shared';
+import { NgbdComponentsSharedModule } from '../shared';
+import { NgbdDropdownApi } from './api.component';
+import { DEMO_DIRECTIVES } from './demos';
+import { NgbdDropdownExamples } from './examples.component';
 
-import {NgbdSharedModule} from '../../shared';
-import {NgbdComponentsSharedModule} from '../shared';
-import {NgbdDropdown} from './dropdown.component';
-import {DEMO_DIRECTIVES} from './demos';
+
+export * from './api.component';
+export * from './examples.component';
 
 @NgModule({
   imports: [NgbdSharedModule, NgbdComponentsSharedModule],
-  exports: [NgbdDropdown],
-  declarations: [NgbdDropdown, ...DEMO_DIRECTIVES]
+  exports: [NgbdDropdownExamples, NgbdDropdownApi],
+  declarations: [NgbdDropdownExamples, NgbdDropdownApi, ...DEMO_DIRECTIVES]
 })
 export class NgbdDropdownModule {}

@@ -1,15 +1,17 @@
-export * from './pagination.component';
+import { NgModule } from '@angular/core';
 
-import {NgModule} from '@angular/core';
+import { NgbdSharedModule } from '../../shared';
+import { NgbdComponentsSharedModule } from '../shared';
+import { NgbdPaginationApi } from './api.component';
+import { DEMO_DIRECTIVES } from './demos';
+import { NgbdPaginationExamples } from './examples.component';
 
-import {NgbdSharedModule} from '../../shared';
-import {NgbdComponentsSharedModule} from '../shared';
-import {NgbdPagination} from './pagination.component';
-import {DEMO_DIRECTIVES} from './demos';
+export * from './api.component';
+export * from './examples.component';
 
 @NgModule({
   imports: [NgbdSharedModule, NgbdComponentsSharedModule],
-  exports: [NgbdPagination],
-  declarations: [NgbdPagination, ...DEMO_DIRECTIVES]
+  exports: [NgbdPaginationApi, NgbdPaginationExamples],
+  declarations: [NgbdPaginationApi, NgbdPaginationExamples, ...DEMO_DIRECTIVES]
 })
 export class NgbdPaginationModule {}

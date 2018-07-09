@@ -1,16 +1,17 @@
-export * from './carousel.component';
+import { NgModule } from '@angular/core';
 
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { NgbdSharedModule } from '../../shared';
+import { NgbdComponentsSharedModule } from '../shared';
+import { NgbdCarouselApi } from './api.component';
+import { DEMO_DIRECTIVES } from './demos';
+import { NgbdCarouselExamples } from './examples.component';
 
-import {NgbdSharedModule} from '../../shared';
-import {NgbdComponentsSharedModule} from '../shared';
-import {NgbdCarousel} from './carousel.component';
-import {DEMO_DIRECTIVES} from './demos';
+export * from './api.component';
+export * from './examples.component';
 
 @NgModule({
   imports: [NgbdSharedModule, NgbdComponentsSharedModule],
-  exports: [NgbdCarousel],
-  declarations: [NgbdCarousel, ...DEMO_DIRECTIVES]
+  exports: [NgbdCarouselExamples, NgbdCarouselApi],
+  declarations: [NgbdCarouselExamples, NgbdCarouselApi, ...DEMO_DIRECTIVES]
 })
 export class NgbdCarouselModule {}

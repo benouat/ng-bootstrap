@@ -1,13 +1,13 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
-import {NgbDateParserFormatter, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'ngbd-datepicker-overview',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './datepicker-overview.component.html'
+  templateUrl: './datepicker-overview.component.html',
+  host: {
+    '[class.overview]': 'true'
+  }
 })
-
-export class NgbdDatepickerOverviewComponent {
+export class NgbdDatepickerOverview {
   snippets = {
     basic: `
 <!-- 1. inline datepicker -->

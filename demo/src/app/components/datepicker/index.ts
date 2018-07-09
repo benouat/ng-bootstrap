@@ -1,15 +1,25 @@
-export * from './datepicker.component';
+import { NgModule } from '@angular/core';
 
-import {NgModule} from '@angular/core';
-import {NgbdSharedModule} from '../../shared';
-import {NgbdComponentsSharedModule} from '../shared';
-import {NgbdDatepicker} from './datepicker.component';
-import {NgbdDatepickerOverviewComponent, NgbdDatepickerOverviewDemoComponent} from './overview';
-import {DEMO_DIRECTIVES} from './demos';
+import { NgbdSharedModule } from '../../shared';
+import { NgbdComponentsSharedModule } from '../shared';
+import { NgbdDatepickerApi } from './api.component';
+import { DEMO_DIRECTIVES } from './demos';
+import { NgbdDatepickerExamples } from './examples.component';
+import { NgbdDatepickerOverview, NgbdDatepickerOverviewDemoComponent } from './overview';
+
+export * from './examples.component';
+export * from './api.component';
+export * from './overview';
 
 @NgModule({
   imports: [NgbdSharedModule, NgbdComponentsSharedModule],
-  exports: [NgbdDatepicker],
-  declarations: [NgbdDatepicker, ...DEMO_DIRECTIVES, NgbdDatepickerOverviewComponent, NgbdDatepickerOverviewDemoComponent],
+  exports: [NgbdDatepickerExamples, NgbdDatepickerApi],
+  declarations: [
+    NgbdDatepickerExamples,
+    NgbdDatepickerApi,
+    ...DEMO_DIRECTIVES,
+    NgbdDatepickerOverview,
+    NgbdDatepickerOverviewDemoComponent
+  ]
 })
 export class NgbdDatepickerModule {}

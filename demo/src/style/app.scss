@@ -106,7 +106,11 @@ header.title {
   }
 }
 
-.contextual-nav .nav {
+ngbd-content-navigation {
+  display: block;
+}
+
+.contextual-nav ngbd-content-navigation {
   position: sticky;
   top: 0;
 

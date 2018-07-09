@@ -1,7 +1,8 @@
-import {Router, NavigationEnd} from '@angular/router';
-import {Component, OnInit} from '@angular/core';
-import {Analytics} from './shared/analytics/analytics';
-import {componentsList} from './shared';
+import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+
+import { Analytics } from './shared/analytics/analytics';
+
 
 @Component({
   selector: 'ngbd-app',
@@ -9,8 +10,6 @@ import {componentsList} from './shared';
 })
 export class AppComponent implements OnInit {
   navbarCollapsed = true;
-
-  components = componentsList;
 
   constructor(private _analytics: Analytics, router: Router) {
     router.events.subscribe(event => {

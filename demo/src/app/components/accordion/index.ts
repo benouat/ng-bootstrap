@@ -1,15 +1,18 @@
-export * from './accordion.component';
+import { NgModule } from '@angular/core';
 
-import {NgModule} from '@angular/core';
+import { NgbdSharedModule } from '../../shared';
+import { NgbdComponentsSharedModule } from '../shared';
+import { NgbdAccordionApi } from './api.component';
+import { DEMO_DIRECTIVES } from './demos';
+import { NgbdAccordionExamples } from './examples.component';
 
-import {NgbdSharedModule} from '../../shared';
-import {NgbdComponentsSharedModule} from '../shared';
-import {NgbdAccordion} from './accordion.component';
-import {DEMO_DIRECTIVES} from './demos';
+export * from './api.component';
+export * from './examples.component';
 
 @NgModule({
   imports: [NgbdSharedModule, NgbdComponentsSharedModule],
-  exports: [NgbdAccordion],
-  declarations: [NgbdAccordion, ...DEMO_DIRECTIVES]
+  exports: [],
+  declarations: [NgbdAccordionExamples, NgbdAccordionApi, ...DEMO_DIRECTIVES],
+  entryComponents: [NgbdAccordionExamples, NgbdAccordionApi]
 })
 export class NgbdAccordionModule {}

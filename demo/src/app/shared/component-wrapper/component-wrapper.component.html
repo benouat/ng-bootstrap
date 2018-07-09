@@ -26,97 +26,53 @@
 
     <div class="col-12 col-lg-10">
       <header class="bg-light pt-4 pb-md-5 px-4 px-lg-5 d-flex d-md-block align-items-center title">
-        <h1 class="mb-4 mr-auto mr-md-none">{{ component }}</h1>
+        <h1 class="mb-4 mr-auto mr-md-none">{{ component | titlecase }}</h1>
 
         <ul class="nav nav-tabs px-4 px-lg-5 content-tabset" [class.justify-content-start]="isLargeScreenOrLess" [class.justify-content-end]="isSmallScreenOrLess">
-          <li class="nav-item" *ngIf="overview">
+          <li class="nav-item">
             <a
+              *ngIf="hasOverview"
               class="nav-link"
               [class.active]="activeTab === 'overview'"
-              [routerLink]="['/components', component.toLowerCase(), 'overview']"
+              [routerLink]="['/components', component, 'overview']"
             >Overview</a>
           </li>
 
           <li *ngIf="isLargeScreenOrLess" class="nav-item" ngbDropdown [placement]="isSmallScreenOrLess ? 'bottom-right' : 'bottom-left'">
-            <a class="nav-link" [routerLink]="['..', 'examples']" [class.active]="activeTab === 'examples'">
+            <a class="nav-link" [routerLink]="['/components', component, 'examples']" [class.active]="activeTab === 'examples'">
               Examples
-              <a class="dropdown-toggle" ngbDropdownToggle><span class="caret"></span></a>
+              <a class="dropdown-toggle" ngbDropdownToggle (click)="localNav.refresh()"><span class="caret"></span></a>
             </a>
             <div
               class="dropdown-menu"
               [class.dropdown-menu-right]="isMobile"
               ngbDropdownMenu
-              >
-               <a [routerLink]="['/components', component.toLowerCase(), 'examples']" [fragment]="demo.demo" *ngFor="let demo of demos" class="dropdown-item">{{demo.demoTitle}}</a>
+            >
+              <ngbd-content-navigation #localNav="ngbdContentNav" [dropdown]="true" [activeTab]="activeTab" [component]="component"></ngbd-content-navigation>
             </div>
           </li>
 
           <li *ngIf="!isLargeScreenOrLess" class="nav-item">
-            <a class="nav-link" [routerLink]="['..', 'examples']" [class.active]="activeTab === 'examples'">
+            <a class="nav-link" [routerLink]="['/components', component, 'examples']" [class.active]="activeTab === 'examples'">
               Examples
             </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['..', 'api']" [class.active]="activeTab === 'api'">Api</a>
+            <a class="nav-link" [routerLink]="['/components', component, 'api']" [class.active]="activeTab === 'api'">Api</a>
           </li>
         </ul>
       </header>
 
-      <section class="row py-5 px-2 px-md-4 px-lg-5">
-        <div
-          [ngSwitch]="activeTab"
-          class="col-12 col-xl-9 px-md-0 pr-xl-4"
-        >
-          <ng-container *ngSwitchCase="'overview'">
-            <ng-content select="ngbd-overview"></ng-content>
-          </ng-container>
-
-          <ng-container *ngSwitchCase="'examples'">
-            <ng-content select="ngbd-example-box"></ng-content>
-            <div class="examples-legend">
-              <strong>Legend</strong>
-              <p>
-                <ng-container *ngFor="let type of fileTypes">
-                  <small class="badge {{type[2]}} mr-2">{{type[0]}}</small>{{type[1]}}<br>
-                </ng-container>
-              </p>
-            </div>
-          </ng-container>
-
-          <ng-container *ngSwitchCase="'api'">
-            <ng-content select="ngbd-api-docs"></ng-content>
-            <ng-content select="ngbd-api-docs-class"></ng-content>
-            <ng-content select="ngbd-api-docs-config"></ng-content>
-          </ng-container>
+      <section class="doc-content row py-5 px-2 px-md-4 px-lg-5">
+        <div class="col-12 col-xl-9 px-md-0 pr-xl-4">
+          <router-outlet (activate)="nav.refresh()"></router-outlet>
         </div>
 
         <div
-          [ngSwitch]="activeTab"
           class="col-12 col-xl-3 d-none d-xl-block contextual-nav"
         >
-          <ul
-            *ngSwitchCase="'examples'"
-            class="nav flex-column text-muted pt-4"
-          >
-            <li *ngFor="let demo of demos" class="nav-item">
-              <a class="nav-link" [routerLink]="['/components', component.toLowerCase(), 'examples']" [fragment]="demo.demo">{{demo.demoTitle}}</a>
-            </li>
-          </ul>
-
-          <ul *ngSwitchCase="'api'" class="nav flex-column text-muted pt-4">
-            <li *ngFor="let api of apiDocs" class="nav-item">
-              <a class="nav-link" [routerLink]="['/components', component.toLowerCase(), 'api']" [fragment]="api.apiDocs.className">{{api.apiDocs.className}}</a>
-            </li>
-            <li *ngIf="apiDocsClass.length" class="nav-item">&nbsp;</li>
-            <li *ngFor="let api of apiDocsClass" class="nav-item">
-              <a class="nav-link" [routerLink]="['/components', component.toLowerCase(), 'api']" [fragment]="api.apiDocs.className">{{api.apiDocs.className}}</a>
-            </li>
-            <li *ngIf="apiDocsConfig.length" class="nav-item">&nbsp;</li>
-            <li *ngFor="let api of apiDocsConfig" class="nav-item">
-              <a class="nav-link" [routerLink]="['/components', component.toLowerCase(), 'api']" [fragment]="api.apiDocs.className">{{api.apiDocs.className}}</a>
-            </li>
-          </ul>
+          <ngbd-content-navigation #nav="ngbdContentNav" [activeTab]="activeTab" [component]="component"></ngbd-content-navigation>
         </div>
       </section>
     </div>
