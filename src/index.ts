@@ -7,6 +7,7 @@ import {NgbCarouselModule} from './carousel/carousel.module';
 import {NgbCollapseModule} from './collapse/collapse.module';
 import {NgbDatepickerModule} from './datepicker/datepicker.module';
 import {NgbDropdownModule} from './dropdown/dropdown.module';
+import {NgbLoaderModule} from './loader/loader.module';
 import {NgbModalModule} from './modal/modal.module';
 import {NgbPaginationModule} from './pagination/pagination.module';
 import {NgbPopoverModule} from './popover/popover.module';
@@ -17,8 +18,6 @@ import {NgbTimepickerModule} from './timepicker/timepicker.module';
 import {NgbToastModule} from './toast/toast.module';
 import {NgbTooltipModule} from './tooltip/tooltip.module';
 import {NgbTypeaheadModule} from './typeahead/typeahead.module';
-
-
 
 export {
   NgbAccordion,
@@ -109,9 +108,9 @@ export {
 } from './tabset/tabset.module';
 export {
   NgbTimeAdapter,
-  NgbTimepickerI18n,
   NgbTimepicker,
   NgbTimepickerConfig,
+  NgbTimepickerI18n,
   NgbTimepickerModule,
   NgbTimeStruct
 } from './timepicker/timepicker.module';
@@ -129,8 +128,8 @@ export {Placement} from './util/positioning';
 
 const NGB_MODULES = [
   NgbAccordionModule, NgbAlertModule, NgbButtonsModule, NgbCarouselModule, NgbCollapseModule, NgbDatepickerModule,
-  NgbDropdownModule, NgbModalModule, NgbPaginationModule, NgbPopoverModule, NgbProgressbarModule, NgbRatingModule,
-  NgbTabsetModule, NgbTimepickerModule, NgbToastModule, NgbTooltipModule, NgbTypeaheadModule
+  NgbDropdownModule, NgbLoaderModule, NgbModalModule, NgbPaginationModule, NgbPopoverModule, NgbProgressbarModule,
+  NgbRatingModule, NgbTabsetModule, NgbTimepickerModule, NgbToastModule, NgbTooltipModule, NgbTypeaheadModule
 ];
 
 @NgModule({imports: NGB_MODULES, exports: NGB_MODULES})

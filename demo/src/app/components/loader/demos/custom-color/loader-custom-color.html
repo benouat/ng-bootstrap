@@ -1,0 +1,10 @@
+<ngb-loader
+  [color]="randomColor"
+  [start$]="start$" [end$]="end$"
+  [style.position]="'absolute'"
+></ngb-loader>
+<div class="d-flex justify-content-between align-items-center pt-2">
+  <button type="button" class="btn btn-link px-0" (click)="start()">Click me to see a local colorful loader</button>
+  <span class="text-muted">Each click will generate a random color</span>
+</div>
+

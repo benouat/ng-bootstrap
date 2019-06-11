@@ -11,6 +11,7 @@ import {NgbdCarouselModule} from './components/carousel/carousel.module';
 import {NgbdCollapseModule} from './components/collapse/collapse.module';
 import {NgbdDatepickerModule} from './components/datepicker/datepicker.module';
 import {NgbdDropdownModule} from './components/dropdown/dropdown.module';
+import {NgbdLoaderModule} from './components/loader/loader.module';
 import {NgbdModalModule} from './components/modal/modal.module';
 import {NgbdPaginationModule} from './components/pagination/pagination.module';
 import {NgbdPopoverModule} from './components/popover/popover.module';
@@ -36,6 +37,7 @@ const DEMOS = [
   NgbdCollapseModule,
   NgbdDatepickerModule,
   NgbdDropdownModule,
+  NgbdLoaderModule,
   NgbdModalModule,
   NgbdPaginationModule,
   NgbdPopoverModule,
@@ -49,14 +51,12 @@ const DEMOS = [
   NgbdTypeaheadModule
 ];
 
-const PAGES = [
-  GettingStartedPage,
-  PositioningPage
-];
+const PAGES = [GettingStartedPage, PositioningPage];
 
 @NgModule({
   declarations: [AppComponent, DefaultComponent, ...PAGES],
   imports: [BrowserModule, routing, NgbModule, NgbdSharedModule, ...DEMOS],
   bootstrap: [AppComponent]
 })
-export class NgbdModule {}
+export class NgbdModule {
+}

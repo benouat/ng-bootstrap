@@ -1,0 +1,19 @@
+<ngb-loader
+  style="position: absolute"
+  [start$]="start$" [end$]="end$"
+  [style.position]="position"
+  (value)="value = $event"
+></ngb-loader>
+<p class="pt-2">
+  You can start a local loader showing up at the top of this demo container by <button type="button" class="btn btn-link px-0" (click)="start(true)">clicking here</button>.
+  <br />
+  Or
+  <br />
+  You can start an application wide (default usage) loader showing up at the top of the viewport by <button type="button" class="btn btn-link px-0" (click)="start()">clicking here</button>.
+</p>
+<p>A super short duration won't trigger any loader, you can verify it by <button type="button" class="btn btn-link px-0" (click)="short()">clicking here</button>.</p>
+<hr />
+<ngb-alert type="secondary" [dismissible]="false">
+  <div class="text-muted">Random duration: {{(value > 0 && duration) || '-'}}</div>
+  <div class="text-muted">Progressbar value: {{value > 0 ? value : '-'}}</div>
+</ngb-alert>

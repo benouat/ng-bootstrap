@@ -1,5 +1,5 @@
 <div class="component-demo">
-  <a [id]="id"></a>
+  <a [id]="id" class="{{component}}"></a>
   <h2>
     <a [routerLink]="" [fragment]="id" ngbdFragment title="Anchor link to demo: {{id}}">
       <img src="img/link-symbol.svg" alt="Anchor link to: {{id}}" />
@@ -54,7 +54,7 @@
         </ng-template>
       </ngb-tabset>
     </div>
-    <div class="card-body">
+    <div class="card-body position-relative">
       <ng-content></ng-content>
     </div>
 

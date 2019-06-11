@@ -245,6 +245,7 @@ a.title-fragment {
 
 div.component-demo {
   margin-bottom: 3rem;
+
   h2 {
     display: flex;
     margin-bottom: 1rem;
@@ -398,4 +399,9 @@ ngb-carousel {
   .carousel-item img {
     width: 100%;
   }
+}
+
+/* Loader demo to have .card in 'overflow:hidden' for nice local progressbars */
+ngbd-demo a[class=loader] + .card {
+  overflow: hidden;
 }
