@@ -20,28 +20,28 @@ const BROWSERS = {
 module.exports = function (config) {
   config.set({
     basePath: '',
+    files: ['../node_modules/bootstrap/dist/css/bootstrap.min.css'],
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [
       require('karma-jasmine'),
       require('karma-sauce-launcher'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
-    angularCli: {
-      environment: 'dev'
+    client: {
+      clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
-
     sauceLabs: {
       build: `TRAVIS #${process.env.TRAVIS_BUILD_NUMBER} (${process.env.TRAVIS_BUILD_ID})`,
       tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER,
       testName: 'ng-bootstrap/ie',
       retryLimit: 3,
       startConnect: false,
-      recordVideo: false,
+      recordVideo: true,
       recordScreenshots: false,
       options: {
-        'command-timeout': 600,
-        'idle-timeout': 600,
-        'max-duration': 5400
+        commandTimeout: 600,
+        idleTimeout: 600,
+        maxDuration: 5400
       }
     },
 
