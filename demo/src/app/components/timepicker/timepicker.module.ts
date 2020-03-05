@@ -1,28 +1,30 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 
-import { NgbdSharedModule } from '../../shared';
-import { ComponentWrapper } from '../../shared/component-wrapper/component-wrapper.component';
-import { NgbdComponentsSharedModule, NgbdDemoList } from '../shared';
-import { NgbdApiPage } from '../shared/api-page/api.component';
-import { NgbdExamplesPage } from '../shared/examples-page/examples.component';
-import { NgbdTimepickerAdapter } from './demos/adapter/timepicker-adapter';
-import { NgbdTimepickerAdapterModule } from './demos/adapter/timepicker-adapter.module';
-import { NgbdTimepickerBasic } from './demos/basic/timepicker-basic';
-import { NgbdTimepickerBasicModule } from './demos/basic/timepicker-basic.module';
-import { NgbdTimepickerConfig } from './demos/config/timepicker-config';
-import { NgbdTimepickerConfigModule } from './demos/config/timepicker-config.module';
-import { NgbdTimepickerMeridian } from './demos/meridian/timepicker-meridian';
-import { NgbdTimepickerMeridianModule } from './demos/meridian/timepicker-meridian.module';
-import { NgbdTimepickerSeconds } from './demos/seconds/timepicker-seconds';
-import { NgbdTimepickerSecondsModule } from './demos/seconds/timepicker-seconds.module';
-import { NgbdTimepickerSpinners } from './demos/spinners/timepicker-spinners';
-import { NgbdTimepickerSpinnersModule } from './demos/spinners/timepicker-spinners.module';
-import { NgbdTimepickerSteps } from './demos/steps/timepicker-steps';
-import { NgbdTimepickerStepsModule } from './demos/steps/timepicker-steps.module';
-import { NgbdTimepickerValidation } from './demos/validation/timepicker-validation';
-import { NgbdTimepickerValidationModule } from './demos/validation/timepicker-validation.module';
-import { NgbdTimepickerI18n } from './demos/i18n/timepicker-i18n';
-import { NgbdTimepickerI18nModule } from './demos/i18n/timepicker-i18n.module';
+import {NgbdSharedModule} from '../../shared';
+import {ComponentWrapper} from '../../shared/component-wrapper/component-wrapper.component';
+import {NgbdComponentsSharedModule, NgbdDemoList} from '../shared';
+import {NgbdApiPage} from '../shared/api-page/api.component';
+import {NgbdExamplesPage} from '../shared/examples-page/examples.component';
+import {NgbdTimepickerAdapter} from './demos/adapter/timepicker-adapter';
+import {NgbdTimepickerAdapterModule} from './demos/adapter/timepicker-adapter.module';
+import {NgbdTimepickerBasic} from './demos/basic/timepicker-basic';
+import {NgbdTimepickerBasicModule} from './demos/basic/timepicker-basic.module';
+import {NgbdTimepickerConfig} from './demos/config/timepicker-config';
+import {NgbdTimepickerConfigModule} from './demos/config/timepicker-config.module';
+import {NgbdTimepickerMeridian} from './demos/meridian/timepicker-meridian';
+import {NgbdTimepickerMeridianModule} from './demos/meridian/timepicker-meridian.module';
+import {NgbdTimepickerSeconds} from './demos/seconds/timepicker-seconds';
+import {NgbdTimepickerSecondsModule} from './demos/seconds/timepicker-seconds.module';
+import {NgbdTimepickerSpinners} from './demos/spinners/timepicker-spinners';
+import {NgbdTimepickerSpinnersModule} from './demos/spinners/timepicker-spinners.module';
+import {NgbdTimepickerSteps} from './demos/steps/timepicker-steps';
+import {NgbdTimepickerStepsModule} from './demos/steps/timepicker-steps.module';
+import {NgbdTimepickerValidation} from './demos/validation/timepicker-validation';
+import {NgbdTimepickerValidationModule} from './demos/validation/timepicker-validation.module';
+import {NgbdTimepickerI18n} from './demos/i18n/timepicker-i18n';
+import {NgbdTimepickerI18nModule} from './demos/i18n/timepicker-i18n.module';
+import {NgbdTimepickerDirectives} from './demos/directives/timepicker-directives';
+import {NgbdTimepickerDirectivesModule} from './demos/directives/timepicker-directives.module';
 
 const DEMOS = {
   basic: {
@@ -73,6 +75,12 @@ const DEMOS = {
     code: require('!!raw-loader!./demos/i18n/timepicker-i18n').default,
     markup: require('!!raw-loader!./demos/i18n/timepicker-i18n.html').default
   },
+  directives: {
+    title: 'Using single input with directive',
+    type: NgbdTimepickerDirectives,
+    code: require('!!raw-loader!./demos/directives/timepicker-directives').default,
+    markup: require('!!raw-loader!./demos/directives/timepicker-directives.html').default
+  },
   config: {
     title: 'Global configuration of timepickers',
     type: NgbdTimepickerConfig,
@@ -82,34 +90,21 @@ const DEMOS = {
 };
 
 export const ROUTES = [
-  { path: '', pathMatch: 'full', redirectTo: 'examples' },
-  {
+  {path: '', pathMatch: 'full', redirectTo: 'examples'}, {
     path: '',
     component: ComponentWrapper,
-    children: [
-      { path: 'examples', component: NgbdExamplesPage },
-      { path: 'api', component: NgbdApiPage }
-    ]
+    children: [{path: 'examples', component: NgbdExamplesPage}, {path: 'api', component: NgbdApiPage}]
   }
 ];
 
 @NgModule({
   imports: [
-    NgbdSharedModule,
-    NgbdComponentsSharedModule,
-    NgbdTimepickerBasicModule,
-    NgbdTimepickerI18nModule,
-    NgbdTimepickerMeridianModule,
-    NgbdTimepickerSecondsModule,
-    NgbdTimepickerSpinnersModule,
-    NgbdTimepickerStepsModule,
-    NgbdTimepickerValidationModule,
-    NgbdTimepickerAdapterModule,
+    NgbdSharedModule, NgbdComponentsSharedModule, NgbdTimepickerBasicModule, NgbdTimepickerI18nModule,
+    NgbdTimepickerMeridianModule, NgbdTimepickerSecondsModule, NgbdTimepickerSpinnersModule, NgbdTimepickerStepsModule,
+    NgbdTimepickerValidationModule, NgbdTimepickerAdapterModule, NgbdTimepickerDirectivesModule,
     NgbdTimepickerConfigModule
   ]
 })
 export class NgbdTimepickerModule {
-  constructor(demoList: NgbdDemoList) {
-    demoList.register('timepicker', DEMOS);
-  }
+  constructor(demoList: NgbdDemoList) { demoList.register('timepicker', DEMOS); }
 }

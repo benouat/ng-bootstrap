@@ -39,8 +39,11 @@ export class NgbTimeStructAdapter extends NgbTimeAdapter<NgbTimeStruct> {
    */
   fromModel(time: NgbTimeStruct): NgbTimeStruct {
     return (time && isInteger(time.hour) && isInteger(time.minute)) ?
-        {hour: time.hour, minute: time.minute, second: isInteger(time.second) ? time.second : null} :
+        {hour: time.hour, minute: time.minute, ...(isInteger(time.second) && {second: time.second})} :
         null;
+    // return (time && isInteger(time.hour) && isInteger(time.minute)) ?
+    //     {hour: time.hour, minute: time.minute, second: isInteger(time.second) ? time.second : null} :
+    //     null;
   }
 
   /**
@@ -48,7 +51,10 @@ export class NgbTimeStructAdapter extends NgbTimeAdapter<NgbTimeStruct> {
    */
   toModel(time: NgbTimeStruct): NgbTimeStruct {
     return (time && isInteger(time.hour) && isInteger(time.minute)) ?
-        {hour: time.hour, minute: time.minute, second: isInteger(time.second) ? time.second : null} :
+        {hour: time.hour, minute: time.minute, ...(isInteger(time.second) && {second: time.second})} :
         null;
+    // return (time && isInteger(time.hour) && isInteger(time.minute)) ?
+    //     {hour: time.hour, minute: time.minute, second: isInteger(time.second) ? time.second : null} :
+    //     null;
   }
 }

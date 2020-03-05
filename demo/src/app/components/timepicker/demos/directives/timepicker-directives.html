@@ -1,0 +1,22 @@
+<div class="form-inline">
+  <label for="hour" class="mr-2">Pick a time</label>
+  <input id="hour" type="text" class="form-control" ngbTimepicker [(ngModel)]="time" [meridian]="meridian"
+    [minuteStep]="minuteStep"
+    placeholder="{{'--:--' + ((time?.second && ':--') || '') + (meridian ? ' [AM/PM]' : '')}}">
+</div>
+<hr>
+<div class="d-flex">
+  <button class="btn btn-sm btn-outline-{{meridian ? 'success' : 'danger'}}" (click)="toggleMeridian()">
+    Meridian - {{meridian ? "ON" : "OFF"}}
+  </button>
+  <button class="btn btn-sm btn-outline-{{seconds ? 'success' : 'danger'}} ml-2" (click)="toggleSeconds()">
+    Seconds - {{seconds ? "ON" : "OFF"}}
+  </button>
+  <select class="custom-select custom-select-sm border-success text-success w-auto ml-2" [(ngModel)]="minuteStep">
+    <option [value]="1">Minute step (1 min - default)</option>
+    <option [value]="15">Minute step (15 min)</option>
+  </select>
+</div>
+
+<hr>
+<pre>Selected time: {{time | json}}</pre>
