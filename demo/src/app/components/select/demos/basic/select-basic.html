@@ -1,0 +1,21 @@
+<form [formGroup]="form">
+  <div class="form-group">
+    <label>Select a state</label>
+    <ngb-select formControlName="state">
+      <ngb-select-option
+        *ngFor="let state of states"
+        [value]="state"
+      ></ngb-select-option>
+    </ngb-select>
+  </div>
+  <div class="mb-3 d-flex justify-content-between align-items-center">
+    <div>
+      <button class="btn btn-primary" type="button" (click)="state.setValue('Connecticut')">Select 'Connecticut'</button>
+    </div>
+    <div>Selected: {{state?.value | json}}</div>
+
+    <button class="btn btn-outline-secondary" type="button" (click)="state.enabled ? state.disable() : state.enable()">
+      {{state.enabled ? 'Disable' : 'Enable'}}
+    </button>
+  </div>
+</form>

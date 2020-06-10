@@ -17,6 +17,7 @@ import {NgbdPaginationModule} from './components/pagination/pagination.module';
 import {NgbdPopoverModule} from './components/popover/popover.module';
 import {NgbdProgressbarModule} from './components/progressbar/progressbar.module';
 import {NgbdRatingModule} from './components/rating/rating.module';
+import {NgbdSelectModule} from './components/select/select.module';
 import {NgbdTableModule} from './components/table/table.module';
 import {NgbdTabsetModule} from './components/tabset/tabset.module';
 import {NgbdTimepickerModule} from './components/timepicker/timepicker.module';
@@ -29,36 +30,20 @@ import {PositioningPage} from './pages/positioning/positioning.component';
 import {NgbdSharedModule} from './shared';
 
 
+
 const DEMOS = [
-  NgbdAccordionModule,
-  NgbdAlertModule,
-  NgbdButtonsModule,
-  NgbdCarouselModule,
-  NgbdCollapseModule,
-  NgbdDatepickerModule,
-  NgbdDropdownModule,
-  NgbdModalModule,
-  NgbdNavModule,
-  NgbdPaginationModule,
-  NgbdPopoverModule,
-  NgbdProgressbarModule,
-  NgbdRatingModule,
-  NgbdTableModule,
-  NgbdTabsetModule,
-  NgbdTimepickerModule,
-  NgbdToastModule,
-  NgbdTooltipModule,
-  NgbdTypeaheadModule
+  NgbdAccordionModule,  NgbdAlertModule,       NgbdButtonsModule, NgbdCarouselModule, NgbdCollapseModule,
+  NgbdDatepickerModule, NgbdDropdownModule,    NgbdModalModule,   NgbdNavModule,      NgbdPaginationModule,
+  NgbdPopoverModule,    NgbdProgressbarModule, NgbdRatingModule,  NgbdSelectModule,   NgbdTableModule,
+  NgbdTabsetModule,     NgbdTimepickerModule,  NgbdToastModule,   NgbdTooltipModule,  NgbdTypeaheadModule
 ];
 
-const PAGES = [
-  GettingStartedPage,
-  PositioningPage
-];
+const PAGES = [GettingStartedPage, PositioningPage];
 
 @NgModule({
   declarations: [AppComponent, DefaultComponent, ...PAGES],
   imports: [BrowserModule, routing, NgbModule, NgbdSharedModule, ...DEMOS],
   bootstrap: [AppComponent]
 })
-export class NgbdModule {}
+export class NgbdModule {
+}

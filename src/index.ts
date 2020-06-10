@@ -13,6 +13,7 @@ import {NgbPaginationModule} from './pagination/pagination.module';
 import {NgbPopoverModule} from './popover/popover.module';
 import {NgbProgressbarModule} from './progressbar/progressbar.module';
 import {NgbRatingModule} from './rating/rating.module';
+import {NgbSelectModule} from './select/select.module';
 import {NgbTabsetModule} from './tabset/tabset.module';
 import {NgbTimepickerModule} from './timepicker/timepicker.module';
 import {NgbToastModule} from './toast/toast.module';
@@ -59,7 +60,6 @@ export {
   NgbDateParserFormatter,
   NgbDatepicker,
   NgbDatepickerConfig,
-  NgbInputDatepickerConfig,
   NgbDatepickerContent,
   NgbDatepickerI18n,
   NgbDatepickerI18nHebrew,
@@ -70,6 +70,7 @@ export {
   NgbDatepickerState,
   NgbDateStruct,
   NgbInputDatepicker,
+  NgbInputDatepickerConfig,
   NgbPeriod
 } from './datepicker/datepicker.module';
 export {
@@ -92,9 +93,9 @@ export {
   NgbModalRef
 } from './modal/modal.module';
 export {
+  NgbNav,
   NgbNavChangeEvent,
   NgbNavConfig,
-  NgbNav,
   NgbNavContent,
   NgbNavContentContext,
   NgbNavItem,
@@ -116,6 +117,7 @@ export {
 export {NgbPopover, NgbPopoverConfig, NgbPopoverModule} from './popover/popover.module';
 export {NgbProgressbar, NgbProgressbarConfig, NgbProgressbarModule} from './progressbar/progressbar.module';
 export {NgbRating, NgbRatingConfig, NgbRatingModule} from './rating/rating.module';
+export {NgbSelect, NgbSelectBase, NgbSelectConfig, NgbSelectMultiple, NgbSelectOption} from './select/select.module';
 export {
   NgbTab,
   NgbTabChangeEvent,
@@ -127,9 +129,9 @@ export {
 } from './tabset/tabset.module';
 export {
   NgbTimeAdapter,
-  NgbTimepickerI18n,
   NgbTimepicker,
   NgbTimepickerConfig,
+  NgbTimepickerI18n,
   NgbTimepickerModule,
   NgbTimeStruct
 } from './timepicker/timepicker.module';
@@ -148,7 +150,7 @@ export {Placement} from './util/positioning';
 const NGB_MODULES = [
   NgbAccordionModule, NgbAlertModule, NgbButtonsModule, NgbCarouselModule, NgbCollapseModule, NgbDatepickerModule,
   NgbDropdownModule, NgbModalModule, NgbNavModule, NgbPaginationModule, NgbPopoverModule, NgbProgressbarModule,
-  NgbRatingModule, NgbTimepickerModule, NgbToastModule, NgbTooltipModule, NgbTypeaheadModule,
+  NgbRatingModule, NgbSelectModule, NgbTimepickerModule, NgbToastModule, NgbTooltipModule, NgbTypeaheadModule,
   // tslint:disable-next-line:deprecation
   NgbTabsetModule
 ];

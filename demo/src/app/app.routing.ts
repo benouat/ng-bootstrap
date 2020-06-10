@@ -14,6 +14,7 @@ import {ROUTES as PAGINATION_ROUTES} from './components/pagination/pagination.mo
 import {ROUTES as POPOVER_ROUTES} from './components/popover/popover.module';
 import {ROUTES as PROGRESSBAR_ROUTES} from './components/progressbar/progressbar.module';
 import {ROUTES as RATING_ROUTES} from './components/rating/rating.module';
+import {ROUTES as SELECT_ROUTES} from './components/select/select.module';
 import {ROUTES as TABLE_ROUTES} from './components/table/table.module';
 import {ROUTES as TABSET_ROUTES} from './components/tabset/tabset.module';
 import {ROUTES as TIMEPICKER_ROUTES} from './components/timepicker/timepicker.module';
@@ -24,36 +25,36 @@ import {DefaultComponent} from './default';
 import {GettingStartedPage} from './pages/getting-started/getting-started.component';
 import {PositioningPage} from './pages/positioning/positioning.component';
 
+
+
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'home' },
-  { path: 'home', component: DefaultComponent },
-  { path: 'getting-started', component: GettingStartedPage },
-  { path: 'positioning', component: PositioningPage },
-  { path: 'components', pathMatch: 'full', redirectTo: 'components/alert' },
-  { path: 'components/accordion', children: ACCORDION_ROUTES },
-  { path: 'components/alert', children: ALERT_ROUTES },
-  { path: 'components/buttons', children: BUTTONS_ROUTES },
-  { path: 'components/carousel', children: CAROUSEL_ROUTES },
-  { path: 'components/collapse', children: COLLAPSE_ROUTES },
-  { path: 'components/datepicker', children: DATEPICKER_ROUTES },
-  { path: 'components/dropdown', children: DROPDOWN_ROUTES },
-  { path: 'components/modal', children: MODAL_ROUTES },
-  { path: 'components/nav', children: NAV_ROUTES },
-  { path: 'components/pagination', children: PAGINATION_ROUTES },
-  { path: 'components/popover', children: POPOVER_ROUTES },
-  { path: 'components/progressbar', children: PROGRESSBAR_ROUTES },
-  { path: 'components/rating', children: RATING_ROUTES },
-  { path: 'components/table', children: TABLE_ROUTES },
-  { path: 'components/tabset', children: TABSET_ROUTES },
-  { path: 'components/toast', children: TOAST_ROUTES },
-  { path: 'components/timepicker', children: TIMEPICKER_ROUTES },
-  { path: 'components/tooltip', children: TOOLTIP_ROUTES },
-  { path: 'components/typeahead', children: TYPEAHEAD_ROUTES },
-  { path: '**', redirectTo: 'home' }
+  {path: '', pathMatch: 'full', redirectTo: 'home'},
+  {path: 'home', component: DefaultComponent},
+  {path: 'getting-started', component: GettingStartedPage},
+  {path: 'positioning', component: PositioningPage},
+  {path: 'components', pathMatch: 'full', redirectTo: 'components/alert'},
+  {path: 'components/accordion', children: ACCORDION_ROUTES},
+  {path: 'components/alert', children: ALERT_ROUTES},
+  {path: 'components/buttons', children: BUTTONS_ROUTES},
+  {path: 'components/carousel', children: CAROUSEL_ROUTES},
+  {path: 'components/collapse', children: COLLAPSE_ROUTES},
+  {path: 'components/datepicker', children: DATEPICKER_ROUTES},
+  {path: 'components/dropdown', children: DROPDOWN_ROUTES},
+  {path: 'components/modal', children: MODAL_ROUTES},
+  {path: 'components/nav', children: NAV_ROUTES},
+  {path: 'components/pagination', children: PAGINATION_ROUTES},
+  {path: 'components/popover', children: POPOVER_ROUTES},
+  {path: 'components/progressbar', children: PROGRESSBAR_ROUTES},
+  {path: 'components/rating', children: RATING_ROUTES},
+  {path: 'components/select', children: SELECT_ROUTES},
+  {path: 'components/table', children: TABLE_ROUTES},
+  {path: 'components/tabset', children: TABSET_ROUTES},
+  {path: 'components/toast', children: TOAST_ROUTES},
+  {path: 'components/timepicker', children: TIMEPICKER_ROUTES},
+  {path: 'components/tooltip', children: TOOLTIP_ROUTES},
+  {path: 'components/typeahead', children: TYPEAHEAD_ROUTES},
+  {path: '**', redirectTo: 'home'}
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(routes, {
-  enableTracing: false,
-  useHash: true,
-  scrollPositionRestoration: 'enabled'
-});
+export const routing: ModuleWithProviders =
+    RouterModule.forRoot(routes, {enableTracing: false, useHash: true, scrollPositionRestoration: 'enabled'});

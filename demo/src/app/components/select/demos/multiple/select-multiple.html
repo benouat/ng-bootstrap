@@ -1,0 +1,14 @@
+<form>
+  <div class="form-group">
+    <label>Select multiple states</label>
+    <ngb-select multiple name="states" [(ngModel)]="model" [ngModelOptions]="{standalone: true}" required>
+      <ngb-select-option
+        *ngFor="let state of states"
+        [value]="state"
+      ></ngb-select-option>
+    </ngb-select>
+  </div>
+  <p>Model: {{model | json}}</p>
+  <ngb-alert [dismissible]="false">We are using here <code>FormsModule</code> via <code>[(ngModel)]</code> to validate data model</ngb-alert>
+</form>
+

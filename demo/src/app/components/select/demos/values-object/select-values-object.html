@@ -1,0 +1,18 @@
+<form>
+  <div class="form-group">
+    <label>Select a state</label>
+    <ngb-select [(ngModel)]="model" [ngModelOptions]="{standalone: true}">
+      <ng-template ngbOption let-option>{{option.label}}</ng-template>
+      <ngb-select-option
+        *ngFor="let state of states"
+        labelGetter="label"
+        [value]="state"
+      >
+      </ngb-select-option>
+    </ngb-select>
+  </div>
+  <div class="mb-3 d-flex">
+    Selected: {{model | json}}
+  </div>
+</form>
+

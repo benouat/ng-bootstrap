@@ -1,0 +1,13 @@
+<form>
+  <div class="form-group">
+    <label>Select a state</label>
+    <ngb-select [(ngModel)]="model" [ngModelOptions]="{standalone: true}">
+      <ng-template ngbOption let-option>
+        <img [src]="'https://upload.wikimedia.org/wikipedia/commons/thumb/' + option.value['flag']" width="16"> {{option.label}}
+      </ng-template>
+      <ngb-select-option *ngFor="let state of states" labelGetter="name" [value]="state">
+      </ngb-select-option>
+    </ngb-select>
+  </div>
+  <div class="mb-3">Model: {{model | json}}</div>
+</form>

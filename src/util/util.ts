@@ -22,6 +22,10 @@ export function isInteger(value: any): value is number {
   return typeof value === 'number' && isFinite(value) && Math.floor(value) === value;
 }
 
+export function isObject(value: any): value is {[key: string]: any} {
+  return value != null && typeof value === 'object';
+}
+
 export function isDefined(value: any): boolean {
   return value !== undefined && value !== null;
 }

@@ -1,4 +1,5 @@
 export enum Key {
+  Backspace = 8,
   Tab = 9,
   Enter = 13,
   Escape = 27,

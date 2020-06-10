@@ -1,0 +1,15 @@
+<form>
+  <div class="form-group">
+    <label>Select a state</label>
+    <ngb-select>
+      <ngb-select-option
+        *ngFor="let state of states; index as index"
+        [value]="state"
+        [disabled]="index === disabledIndex"
+      ></ngb-select-option>
+    </ngb-select>
+  </div>
+  <div class="form-group">
+    Option {{this.states[this.disabledIndex] | json}} is disabled.
+  </div>
+</form>
