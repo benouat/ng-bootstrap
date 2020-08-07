@@ -18,6 +18,7 @@ import {NgbTimepickerModule} from './timepicker/timepicker.module';
 import {NgbToastModule} from './toast/toast.module';
 import {NgbTooltipModule} from './tooltip/tooltip.module';
 import {NgbTypeaheadModule} from './typeahead/typeahead.module';
+import {NgbUtilsModule} from './util/utils.module';
 
 
 
@@ -144,13 +145,15 @@ export {
 } from './typeahead/typeahead.module';
 export {Placement} from './util/positioning';
 
+export * from './util/';
+
 
 const NGB_MODULES = [
   NgbAccordionModule, NgbAlertModule, NgbButtonsModule, NgbCarouselModule, NgbCollapseModule, NgbDatepickerModule,
   NgbDropdownModule, NgbModalModule, NgbNavModule, NgbPaginationModule, NgbPopoverModule, NgbProgressbarModule,
-  NgbRatingModule, NgbTimepickerModule, NgbToastModule, NgbTooltipModule, NgbTypeaheadModule,
+  NgbRatingModule, NgbTimepickerModule, NgbToastModule, NgbTooltipModule, NgbTypeaheadModule, NgbUtilsModule,
   // tslint:disable-next-line:deprecation
-  NgbTabsetModule
+  NgbTabsetModule,
 ];
 
 @NgModule({imports: NGB_MODULES, exports: NGB_MODULES})

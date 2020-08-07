@@ -27,6 +27,7 @@ import {DefaultComponent} from './default';
 import {GettingStartedPage} from './pages/getting-started/getting-started.component';
 import {AnimationsPage} from './pages/animations/animations.component';
 import {PositioningPage} from './pages/positioning/positioning.component';
+import {MediaObserverPage} from './pages/media-queries/media-queries.component';
 import {NgbdSharedModule} from './shared';
 
 
@@ -37,7 +38,7 @@ const DEMOS = [
   NgbdTypeaheadModule
 ];
 
-const PAGES = [GettingStartedPage, AnimationsPage, PositioningPage];
+const PAGES = [GettingStartedPage, AnimationsPage, MediaObserverPage, PositioningPage];
 
 @NgModule({
   declarations: [AppComponent, DefaultComponent, ...PAGES],

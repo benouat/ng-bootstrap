@@ -24,12 +24,14 @@ import {DefaultComponent} from './default';
 import {GettingStartedPage} from './pages/getting-started/getting-started.component';
 import {AnimationsPage} from './pages/animations/animations.component';
 import {PositioningPage} from './pages/positioning/positioning.component';
+import {MediaObserverPage} from './pages/media-queries/media-queries.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'home'},
   {path: 'home', component: DefaultComponent},
   {path: 'getting-started', component: GettingStartedPage},
   {path: 'animations', component: AnimationsPage},
+  { path: 'media-observer', component: MediaObserverPage },
   {path: 'positioning', component: PositioningPage},
   {path: 'components', pathMatch: 'full', redirectTo: 'components/alert'},
   {path: 'components/accordion', children: ACCORDION_ROUTES},

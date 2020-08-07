@@ -7,6 +7,9 @@
     <a class="toc-link" routerLink="/animations">Animations</a>
     <span class="ml-n3 badge badge-info">beta</span>
   </div>
+  <div class="toc-item" [class.active]="isActive(['/media-observer'], false)">
+    <a class="toc-link" routerLink="/media-observer">Media Observer</a>
+  </div>
   <div class="toc-item mb-4" [class.active]="isActive(['/positioning'], false)">
     <a class="toc-link" routerLink="/positioning">Positioning</a>
   </div>

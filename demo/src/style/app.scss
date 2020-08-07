@@ -115,6 +115,10 @@ header.title {
   }
 }
 
+ngbd-page-wrapper header.title {
+  padding-bottom: 1em !important;
+}
+
 .toc {
   margin-left: -15px;
   margin-right: -15px;

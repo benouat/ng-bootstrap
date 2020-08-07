@@ -1,0 +1,60 @@
+<ngbd-page-wrapper pageTitle="Media Observer">
+  <p>Media Observer is an utility service. It provides methods to verify and/or observe changes occuring on specific
+    media queries.
+  </p>
+  <ngbd-code lang="typesript" [snippet]="basic"></ngbd-code>
+
+  <ngbd-page-header title="Default breakpoints" fragment="bs-breakpoints"></ngbd-page-header>
+  <p>Bootstrap already defines its own <a
+      href="https://getbootstrap.com/docs/4.5/layout/overview/#responsive-breakpoints" target="_blank"
+      rel="noreferrer noopener">responsive breakpoints</a>. For you to seamlessly use them, we provide
+    an injection token exposing the below exposed media queries.</p>
+  <figure class="figure d-block">
+    <table class="table table-striped figure-image" style="width: 100%">
+      <thead>
+        <th></th>
+        <th>Media Query</th>
+        <th>Active</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let shortcut of bsBreakPointsName">
+          <th>{{shortcut}}</th>
+          <td><code>{{bsBreakPoints[shortcut]}}</code></td>
+          <td>
+            <button *ngIf="bsBreakpointsActive[bsBreakPoints[shortcut]] === true" class="btn btn-sm btn-outline-primary"
+              [style.pointer-events]="'none'">
+              active
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <figcaption class="figure-caption">
+      <svg:svg ngbdIcon="lightbulb" fill="currentColor" />
+      To illustrate their usage, try to resize the current window to see it live within the 'Active' column.
+    </figcaption>
+  </figure>
+
+  <ngb-alert type="warning" [dismissible]="false">
+    These breakpoints values are <strong>dynamically computed at runtime</strong> based on Bootstrap CSS variables.
+    <br>
+    It means that if you have your own custom SCSS Bootstrap theme and you override these default values, or if you add
+    new ones, it will work just fine with your new values.
+  </ngb-alert>
+
+  <ngbd-page-header title="Typescript usage" fragment="bs-breakpoints-typescript"></ngbd-page-header>
+  <p><code>BOOTSTRAP_BREAKPOINTS</code> token can be injected along with <code>NgbMediaObserver</code> service.</p>
+  <ngbd-code lang="typesript" [snippet]="bstoken"></ngbd-code>
+
+  <ngbd-page-header title="Template usage" fragment="bs-breakpoints-template"></ngbd-page-header>
+
+  <p>We also provide a special <code>*ngIf</code> directive via <code>*ngIfMedia</code>.
+    For an improved DX, all <code>BOOTSTRAP_BREAKPOINTS</code> media-queries can be used implicitely.
+    <br>
+    Providing any of <code>'xs'</code>, <code>'sm'</code>, <code>'md'</code>, <code>'lg'</code> or <code>'xl'</code>
+    will be converted internally to the corresponding media-query.</p>
+  <ngbd-code lang="html" [snippet]="bstokenTemplate"></ngbd-code>
+
+  <ngbd-page-header title="Using arbitrary media queries" fragment="generic"></ngbd-page-header>
+
+</ngbd-page-wrapper>
